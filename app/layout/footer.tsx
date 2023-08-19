@@ -13,7 +13,7 @@ export default function Footer() {
             <Link href={'/'}>
               <Image src='/images/logo.svg' width={214} height={46} alt="logo" />
             </Link>
-            <p className='text-gray text-sm font-semibold w-72'>&ldquo;Onlayn platformaga tegishli barcha materiallar "NAJOT TA'LIM MARKAZI" MCHJning mulki hisoblanadi. Ushbu materiallardan onlayn ta'lim olishdan tashqari nusxa ko'chirish, tarqatish va boshqa maqsadlarda foydalanish qonunan man etiladi.&rdquo;</p>
+            <p className='text-gray text-sm font-semibold w-72'>{`Onlayn platformaga tegishli barcha materiallar "NAJOT TA'LIM MARKAZI" MCHJning mulki hisoblanadi. Ushbu materiallardan onlayn ta'lim olishdan tashqari nusxa ko'chirish, tarqatish va boshqa maqsadlarda foydalanish qonunan man etiladi.`}</p>
           </div>
           <div className='ml-0 lg:ml-8 mt-2'>
             <h1 className='text-primary font-semibold mb-5'>
@@ -67,11 +67,11 @@ export default function Footer() {
               Tarmoqlar
             </h1>
             <div className='text-gray text-sm font-semibold flex'>
-              <BsTelegram className='w-6 h-6 ml-2 cursor-pointer hover:fill-blue-900'  />
-              <BsFacebook className='w-6 h-6 ml-2 cursor-pointer hover:fill-blue-900'  />
-              <BsYoutube className='w-6 h-6 ml-2 cursor-pointer hover:fill-blue-900'  />
-              <BsInstagram className='w-6 h-6 ml-2 cursor-pointer hover:fill-blue-900'  />
-              <BsLinkedin className='w-6 h-6 ml-2 cursor-pointer hover:fill-blue-900'  />
+              <BsTelegram className='w-6 h-6 ml-2 cursor-pointer hover:fill-blue-900' />
+              <BsFacebook className='w-6 h-6 ml-2 cursor-pointer hover:fill-blue-900' />
+              <BsYoutube className='w-6 h-6 ml-2 cursor-pointer hover:fill-blue-900' />
+              <BsInstagram className='w-6 h-6 ml-2 cursor-pointer hover:fill-blue-900' />
+              <BsLinkedin className='w-6 h-6 ml-2 cursor-pointer hover:fill-blue-900' />
             </div>
           </div>
           <div className='mt-10 xl:mt-0'>
