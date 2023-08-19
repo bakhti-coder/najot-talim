@@ -1,0 +1,28 @@
+.falling-text-container {
+  position: relative;
+  top: 0;
+  width: auto;
+  height: 30px;
+}
+
+.falling-text {
+  position: absolute;
+  font-size: 40px;
+  opacity: 0;
+  transition: opacity 1s;
+  color: #ba8d5b;
+}
+
+.falling {
+  opacity: 1;
+  animation: fallAnimation 3s linear infinite;
+}
+
+@keyframes fallAnimation {
+  0% {
+    transform: translateY(-10%);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
