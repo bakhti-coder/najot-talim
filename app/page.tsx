@@ -219,30 +219,147 @@ export default function Home() {
 
         </div>
       </section>
-      <section className="bg-light">
-        <div className="container max-w-1100 py-20">
+      <section className="bg-light mt-10">
+        <div className="container max-w-1100 py-10">
           <div>
             <h1 className="text-primary text-3xl font-bold pb-3">Yo‘nalishlar bo‘yicha kurslar</h1>
             <p className="text-gray font-bold text-[14px]">Zamonaviy sohalardan birini o‘rganing va talabgir kasb egasi bo‘ling!</p>
           </div>
           <div>
+            <div className="grid grid-cols-4 gap-5 my-10">
+
+              {React.Children.toArray(
+                [
+                  {
+                    title: 'SMM onlayn',
+                    subTitle: "Ijtimoiy tarmoqlar orqali turli...",
+                  },
+                  {
+                    title: 'Social Media Design',
+                    subTitle: "Ijtimoiy tarmoqlar orqali turli...",
+                  },
+                  {
+                    title: 'Dasturlash foundation',
+                    subTitle: "Foundation dasturlash kursida C va...",
+                  },
+                  {
+                    title: 'Adobe Illustrator',
+                    subTitle: "Adobe Illustrator - vektorli...",
+                  },
+                  {
+                    title: '.NET mutaxassislik kursi',
+                    subTitle: ".NET mutaxassislik kursi yordamida...",
+                  },
+                  {
+                    title: 'Node JS Telegram bot',
+                    subTitle: "Telegram bot yasash va...",
+                  },
+                  {
+                    title: 'Kompyuter savodxonligi...',
+                    subTitle: "Ushbu kurs orqali kompyuterdan...",
+                  },
+                  {
+                    title: 'HBS AKADEMIYASI',
+                    subTitle: "No'ldan professional darajada...",
+                  },
+
+                ].map((el, key) => (
+
+                  <div key={key} className="border border-light cursor-pointer py-3 px-4 hover:scale-105 transition duration-500 hover:bg-white hover:border-white rounded h-full ">
+
+                    <h1 className="text-[18px] font-bold text-primary pb-4">{el.title}</h1>
+                    <p className="text-gray text-sm">{el.subTitle}</p>
+
+                  </div>
+
+                ))
+              )}
+            </div>
+            <p className="text-green-600 font-semibold">
+              <Link href={'/courses'}>Barcha kurslarni ko'rish</Link>
+            </p>
+          </div>
+        </div>
+      </section>
+      <section>
+        <div className="container max-w-1100 py-10">
+          <div>
+            <h1 className="text-primary text-3xl font-bold pb-3">Bitiruvchilarimizning ish joylari:</h1>
+            <p className="text-gray font-bold text-[14px]">Eng yaxshi bitiruvchilarimiz nufuzli tashkilot va kompaniyalarda faoliyat yuritadi. Zamonaviy kasb egalariga doim va har yerda talab yuqori bo‘ladi.</p>
+          </div>
+          <div className="grid grid-cols-6 gap-5">
 
             {React.Children.toArray(
               [
                 {
-                  title: 'SMM onlayn',
-                  subTitle: "Ijtimoiy tarmoqlar orqali turli biznes va loyihalarni rivojlantirishni o'rganasiz.",
+                  image: '/images/company/epam_logo_light.svg'
+                },
+                {
+                  image: '/images/company/itechart.svg'
+                },
+                {
+                  image: '/images/company/humo.png'
+                },
+                {
+                  image: '/images/company/Agrobank.svg'
+                },
+                {
+                  image: '/images/company/davrbank.png'
+                },
+                {
+                  image: '/images/company/texnomart.svg'
+                },
+                {
+                  image: '/images/company/davrbank.png'
+                },
+                {
+                  image: '/images/company/texnomart.svg'
+                },
+                {
+                  image: '/images/company/itechart.svg'
+                },
+                {
+                  image: '/images/company/humo.png'
+                },
+                {
+                  image: '/images/company/Agrobank.svg'
+                },
+                {
+                  image: '/images/company/davrbank.png'
+                },
+                {
+                  image: '/images/company/texnomart.svg'
+                },
+                {
+                  image: '/images/company/epam_logo_light.svg'
+                },
+                {
+                  image: '/images/company/itechart.svg'
+                },
+                {
+                  image: '/images/company/humo.png'
+                },
+                {
+                  image: '/images/company/Agrobank.svg'
+                },
+                {
+                  image: '/images/company/texnomart.svg'
                 },
 
-              ].map(el => (
-                <div className="grid grid-cols-4 gap-10">
+              ].map((el, key) => (
 
+                <div key={key} className="my-10 mx-auto rounded-lg px-8 py-8 bg-light  transition duration-500 hover:bg-white hover:shadow-lg cursor-pointer">
+                  <Image src={el.image} width={100} height={100} alt="epam" />
                 </div>
+
               ))
             )}
 
           </div>
         </div>
+      </section>
+      <section>
+              
       </section>
     </main>
   )
