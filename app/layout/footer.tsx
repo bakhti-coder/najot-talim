@@ -17,7 +17,7 @@ export default function Footer() {
           </div>
           <div className='ml-0 lg:ml-8 mt-2'>
             <h1 className='text-primary font-semibold mb-5'>
-              Ma'lumotlar
+              {`Ma'lumotlar`}
             </h1>
             <ul className='text-gray text-sm font-semibold w-72'>
               <li className='pb-4 hover:underline'><Link href={'/'} >FAQ</Link></li>
@@ -51,15 +51,15 @@ export default function Footer() {
         <hr className="h-px my-8 ml-0 lg:ml-80 bg-gray-200 border-0 " />
         <div className='mt-10 flex justify-between flex-wrap  '>
           <div className=''>
-            <p className='text-gray text-sm font-semibold'>© Najot Ta'lim, <br /> 2023
-              Barcha huquqlar himoyalangan.</p>
+            <p className='text-gray text-sm font-semibold'>{`© Najot Ta'lim, <br /> 2023
+              Barcha huquqlar himoyalangan.`}</p>
           </div>
           <div className='mt-10 xl:mt-0'>
             <h1 className='text-primary font-semibold mb-5'>
               Ommabop Kurslar
             </h1>
             <div className='text-gray text-sm font-semibold w-72'>
-              <p className='pb-4 hover:underline'> Mo'ljal: Rayhon milliy taomlari qarshi tomoni, 1- va 2-uylar orqa tomoni.</p>
+              <p className='pb-4 hover:underline'>{`Mo'ljal: Rayhon milliy taomlari qarshi tomoni, 1- va 2-uylar orqa tomoni.`} </p>
             </div>
           </div>
           <div className='mt-10 xl:mt-0'>

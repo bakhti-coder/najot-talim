@@ -1,5 +1,5 @@
 'use client'
-import React, { useRef } from "react";
+import React, { useMemo, useRef } from "react";
 import Link from 'next/link';
 import '../css/textanimation.css'
 import { useEffect, useState } from "react";
@@ -12,21 +12,24 @@ import PhoneInput from 'react-phone-number-input'
 
 export default function Home() {
 
-  const texts = ["Najot'tailimda", "mutaxassislaridan ", "onlayn", "istalgannuqtadan",];
+  const texts = ["Najot'tailimda", "mutaxassislaridan ", "onlayn", "istalgannuqtadan"];
+  
 
   const [currentIndex, setCurrentIndex] = useState(0);
   const [open, setOpen] = useState(false)
   const [value, setValue] = useState()
 
-
+  const memoizedTexts = useMemo(() => texts, [texts]);
 
   useEffect(() => {
-    const timer = setTimeout(() => {
-      setCurrentIndex((prevIndex) => (prevIndex + 1) % texts.length);
-    }, 3000);
+    if (texts.length > 0) {
+      const timer = setTimeout(() => {
+        setCurrentIndex((prevIndex) => (prevIndex + 1) % texts.length);
+      }, 3000);
 
-    return () => clearTimeout(timer);
-  }, [currentIndex]);
+      return () => clearTimeout(timer);
+    }
+  }, [memoizedTexts]);
 
   const handleClick = () => {
     setOpen(!open);
@@ -61,7 +64,7 @@ export default function Home() {
             </p>
             <button className='px-10 py-3 text-white font-semibold focus:outline-none text-center hover:bg-white hover:text-black border border-white hover:border-orange bg-orange rounded-full transition'>
               <Link href={'/courses'}>
-                Kurslarni ko'rish
+                {`Kurslarni ko'rish`}
               </Link>
             </button>
           </div>
@@ -216,7 +219,7 @@ export default function Home() {
                 <ChevronUp className="mt-1 " size={16} />
               </div> :
                 <div className="flex">
-                  <h1 className=" text-green-600 text-md font-semibold" onClick={handleClick}>Ko'proq</h1>
+                  <h1 className=" text-green-600 text-md font-semibold" onClick={handleClick}>{`Ko'proq`}</h1>
                   <ChevronDown className="mt-1" size={16} />
                 </div>}
             </div>
@@ -284,7 +287,7 @@ export default function Home() {
               )}
             </div>
             <p className="text-green-600 font-semibold">
-              <Link href={'/courses'}>Barcha kurslarni ko'rish</Link>
+              <Link href={'/courses'}>{`Barcha kurslarni ko'rish`}</Link>
             </p>
           </div>
         </div>
@@ -436,7 +439,7 @@ export default function Home() {
           </div>
         </div>
       </section>
-      <section> 
+      <section>
         <div className="container max-w-1100 mt-[430px]">
           <div className="grid grid-cols-1 xl:grid-cols-2 gap-0">
             <div>
@@ -461,10 +464,10 @@ export default function Home() {
                         value={value}
                         onChange={(newValue) => setValue} />
                     </div>
-                    <p className="text-black font-semibold text-sm mt-6">"So‘rov yuborish" tugmasini bosish orqali <br />
-                      <Link className="text-orange hover:underline" href={'/'}>Platformadan foydalanish qoidalari </Link>  ga rozilik bildirasiz.
-                    </p>
-                    <button type="submit" className="text-white font-semibold text-center bg-orange py-2.5 w-full rounded-full mt-5 hover:bg-white hover:text-black border border-orange hover:border-orange transition">So'rov yuborish</button>
+                    <p className="text-black font-semibold text-sm mt-6">{`"So‘rov yuborish" tugmasini bosish orqali`} <br />
+                      <Link className="text-orange hover:underline" href={'/'}>{`Platformadan foydalanish qoidalari `}</Link>  ga rozilik bildirasiz.
+                  </p>
+                    <button type="submit" className="text-white font-semibold text-center bg-orange py-2.5 w-full rounded-full mt-5 hover:bg-white hover:text-black border border-orange hover:border-orange transition">{`So'rov yuborish`}</button>
                   </form>
 
                 </div>
