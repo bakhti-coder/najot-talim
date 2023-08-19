@@ -26,6 +26,7 @@ const config: Config = {
       textColor: {
         primary: "#0f1826",
         gray: "#607987",
+        gren: '#7cd1ac'
       },
       borderColor: {
         light: '#607987',
@@ -37,7 +38,7 @@ const config: Config = {
         light: '#F9F8F7'
       },
       colors: {
-        
+        orange: "#BA8D5B",
         dark: "#2D4162",
         lightGray: "#F2F4F7",
         light: "#959FB0",

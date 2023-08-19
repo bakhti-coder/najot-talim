@@ -1,16 +1,23 @@
 'use client'
-import React from "react";
+import React, { useRef } from "react";
 import Link from 'next/link';
 import '../css/textanimation.css'
 import { useEffect, useState } from "react";
 import Image from 'next/image';
 import { ChevronDown, ChevronUp } from 'lucide-react';
+import Iframe from 'react-iframe'
+import 'react-phone-number-input/style.css'
+import PhoneInput from 'react-phone-number-input'
+
 
 export default function Home() {
 
+  const texts = ["Najot'tailimda", "mutaxassislaridan ", "onlayn", "istalgannuqtadan",];
+
   const [currentIndex, setCurrentIndex] = useState(0);
   const [open, setOpen] = useState(false)
-  const texts = ["Najot tailimda", "mutaxassislaridan ", "onlayn", "istalgannuqtadan",];
+  const [value, setValue] = useState()
+
 
 
   useEffect(() => {
@@ -25,14 +32,15 @@ export default function Home() {
     setOpen(!open);
   };
 
+
   return (
     <main>
       <section className='bg-lightgraysh'>
-        <div className='container max-w-1100 pt-44 pb-16 flex justify-between '>
+        <div className='container max-w-1100 md:pt-44 pt-20 pb-16 flex justify-between '>
           <div>
 
-            <div className='text-[40px] font-bold'>
-              <h1 className=''>Kasblarni</h1>
+            <div className=' md:text-[40px] text-[25px] font-bold  w-full lg:w-auto '>
+              <h1>Kasblarni</h1>
 
               <div className="falling-text-container">
                 {texts.map((text, index) => (
@@ -45,9 +53,9 @@ export default function Home() {
                 ))}
               </div>
 
-              <h1 className='mt-4'>o‘rganing</h1>
 
             </div>
+            <h1 className='mt-0 md:mt-5 md:text-[40px] text-[25px] font-bold'>o‘rganing</h1>
             <p className='font-semibold text-gray mt-5 mb-16'>
               O‘zingizga qulay vaqtda, joyda va uslubda <br /> zamonaviy kasblarni o‘rganing.
             </p>
@@ -57,7 +65,7 @@ export default function Home() {
               </Link>
             </button>
           </div>
-          <div className=''>
+          <div className="hidden md:flex">
             <div>
               <Image src={'/images/home/Screenshot 2023-08-19 160115.png'} width={800} height={70} alt='main' />
             </div>
@@ -69,7 +77,7 @@ export default function Home() {
         <div className='container max-w-1100 pt-10 transition-all'>
           <h1 className='text-3xl font-semibold mb-10 text-primary'>Bizning afzalliklarimiz</h1>
           {open ?
-            <div className='grid grid-cols-2 gap-16'>
+            <div className='grid  gap-16 grid-cols-1 md:grid-cols-2'>
               <div className='flex'>
                 <div className='mr-10'>
                   <Image src={'/images/home/onlayn-akademiya.svg'} width={130} height={100} alt='logo' />
@@ -162,7 +170,7 @@ export default function Home() {
               </div>
             </div>
             :
-            <div className='grid grid-cols-2 gap-16'>
+            <div className='grid grid-cols-1 md:grid-cols-2 gap-16'>
               <div className='flex'>
                 <div className='mr-10'>
                   <Image src={'/images/home/onlayn-akademiya.svg'} width={130} height={200} alt='logo' />
@@ -226,7 +234,7 @@ export default function Home() {
             <p className="text-gray font-bold text-[14px]">Zamonaviy sohalardan birini o‘rganing va talabgir kasb egasi bo‘ling!</p>
           </div>
           <div>
-            <div className="grid grid-cols-4 gap-5 my-10">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5 my-10">
 
               {React.Children.toArray(
                 [
@@ -287,7 +295,7 @@ export default function Home() {
             <h1 className="text-primary text-3xl font-bold pb-3">Bitiruvchilarimizning ish joylari:</h1>
             <p className="text-gray font-bold text-[14px]">Eng yaxshi bitiruvchilarimiz nufuzli tashkilot va kompaniyalarda faoliyat yuritadi. Zamonaviy kasb egalariga doim va har yerda talab yuqori bo‘ladi.</p>
           </div>
-          <div className="grid grid-cols-6 gap-5">
+          <div className="grid grid-cols-2  md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-5">
 
             {React.Children.toArray(
               [
@@ -359,14 +367,111 @@ export default function Home() {
         </div>
       </section>
       <section>
-        <div className="container max-w-1100 py-16">
+        <div className="container max-w-1100">
           <div>
-            <h1 className="text-primary text-3xl font-bold pb-3">Bitiruvchilarimizdan izohlar</h1>
-            <p className="text-gray font-bold text-[14px]">Oʻquv kurslarimiz, ustozlar, qoʻlga kiritilgan bilim va koʻnikmalar, olingan natijalar haqida bitiruvchilarimizdan eshiting hamda ulardan kerakli tavsiyalar oling.</p>
+            <h1 className="text-primary md:text-3xl text-2xl font-bold pb-3">Bitiruvchilarimizdan izohlar</h1>
+            <p className="text-gray font-bold md:text-[14px] text-[12px]">Oʻquv kurslarimiz, ustozlar, qoʻlga kiritilgan bilim va koʻnikmalar, olingan natijalar haqida bitiruvchilarimizdan eshiting hamda ulardan kerakli tavsiyalar oling.</p>
           </div>
-          <div className="grid grid-cols-4 gap-10">
-                
+          <div className="grid  md:grid-cols-2 lg:grid-cols-4 grid-cols-1 gap-10">
+            <div>
+              <div className="block lg:absolute rounded-lg">
+                <Iframe url="/video/bitiruvchilar-1.mp4?autoplay=false"
+                  width="237px"
+                  height="420px"
+                  id=""
+                  className=" bg-transparent rounded-2xl"
+                  overflow="hidden" />
+              </div>
+              <div className="relative z-20 top-[280px] pl-4 text-sm hidden lg:inline-block">
+                <span className="text-white font-semibold ">25.01.2023</span>
+                <p className="text-gren font-semibold">Frontend dasturchi</p>
+                <h2 className="text-white font-bold text-md">Salohiddin Dilmatov</h2>
+              </div>
+            </div>
+            <div>
+              <div className="block lg:absolute rounded-lg">
+                <Iframe url="/video/bitiruvchilar-2.mp4?autoplay=false"
+                  width="237px"
+                  height="420px"
+                  id=""
+                  className=" bg-transparent rounded-2xl"
+                  overflow="hidden" />
+              </div>
+              <div className="relative z-20 top-[280px] pl-4 text-sm hidden lg:inline-block">
+                <span className="text-white font-semibold ">25.01.2023</span>
+                <p className="text-gren font-semibold">SMM-menejer</p>
+                <h2 className="text-white font-bold text-md">Abdumannof Tursunov</h2>
+              </div>
+            </div>
+            <div>
+              <div className="block lg:absolute rounded-lg">
+                <Iframe url="/video/bitiruvchilar-3.mp4?autoplay=false"
+                  width="237px"
+                  height="420px"
+                  id=""
+                  className=" bg-transparent rounded-2xl"
+                  overflow="hidden" />
+              </div>
+              <div className="relative z-20 top-[280px] pl-4 text-sm hidden lg:inline-block">
+                <span className="text-white font-semibold ">25.01.2023</span>
+                <p className="text-gren font-semibold">Grafik dizayner</p>
+                <h2 className="text-white font-bold text-md">Shohzoda Sunatillayeva</h2>
+              </div>
+            </div>
+            <div>
+              <div className="block lg:absolute rounded-lg">
+                <Iframe url="/video/bitiruvchilar-4.mp4?autoplay=false"
+                  width="237px"
+                  height="420px"
+                  id=""
+                  className=" bg-transparent rounded-2xl"
+                  overflow="hidden" />
+              </div>
+              <div className="relative z-20 top-[280px] pl-4 text-sm hidden lg:inline-block">
+                <span className="text-white font-semibold ">25.01.2023</span>
+                <p className="text-gren font-semibold">ART-direktor</p>
+                <h2 className="text-white font-bold text-md">Sayfulloh Asadullayev</h2>
+              </div>
+            </div>
           </div>
+        </div>
+      </section>
+      <section> 
+        <div className="container max-w-1100 mt-[430px]">
+          <div className="grid grid-cols-1 xl:grid-cols-2 gap-0">
+            <div>
+              <Image src='/images/operator.jpg' width={5000} height={1000} alt="menejer" className="rounded-l-2xl" />
+            </div>
+            <div className="bg-light rounded-r-2xl py-10  pl-5 pr-14">
+              <div className="bg-white py-10 px-5 rounded-2xl">
+                <h1 className="font-semibold text-2xl pb-5">Yordam kerakmi?</h1>
+                <p className="text-sm md:text-lg text-gray"> <Link href={'/'} className="text-orange hover:underline">FAQ</Link>  boʻlimi ham sizga yordam bera olmadimi? Telefon raqamingizni yozib qoldiring, biz sizga qoʻngʻiroq qilamiz va birorta ham savolingiz javobsiz qolmasligiga harakat qilamiz.</p>
+                <div className="mt-5">
+                  <form >
+                    <div>
+                      <label form="first_name" className="block mb-2 text-sm font-medium text-gray">Ismingizni kiriting</label>
+                      <input name="from_name" type="text" id="first_name" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-full focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:focus:border-blue-500" placeholder="Ali" required />
+                    </div>
+                    <div className="mt-5">
+                      <label form="first_name" className="block mb-2 text-sm font-medium text-gray">Telefon raqamingizni kiriting</label>
+                      <PhoneInput
+                        international
+                        type="tel" id="first_name" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-full focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 " required
+                        defaultCountry="UZ"
+                        value={value}
+                        onChange={(newValue) => setValue} />
+                    </div>
+                    <p className="text-black font-semibold text-sm mt-6">"So‘rov yuborish" tugmasini bosish orqali <br />
+                      <Link className="text-orange hover:underline" href={'/'}>Platformadan foydalanish qoidalari </Link>  ga rozilik bildirasiz.
+                    </p>
+                    <button type="submit" className="text-white font-semibold text-center bg-orange py-2.5 w-full rounded-full mt-5 hover:bg-white hover:text-black border border-orange hover:border-orange transition">So'rov yuborish</button>
+                  </form>
+
+                </div>
+              </div>
+            </div>
+          </div>
+
         </div>
       </section>
     </main>
