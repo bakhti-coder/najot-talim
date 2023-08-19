@@ -292,58 +292,58 @@ export default function Home() {
             {React.Children.toArray(
               [
                 {
-                  image: '/images/company/epam_logo_light.svg'
+                  image: '/images/work/work-place-epam.svg'
                 },
                 {
-                  image: '/images/company/itechart.svg'
+                  image: '/images/work/work-place-techart.svg'
                 },
                 {
-                  image: '/images/company/humo.png'
+                  image: '/images/work/work-place-humo.svg'
                 },
                 {
-                  image: '/images/company/Agrobank.svg'
+                  image: '/images/work/work-place-agrobank.svg'
                 },
                 {
-                  image: '/images/company/davrbank.png'
+                  image: '/images/work/work-place-davr-bank.svg'
                 },
                 {
-                  image: '/images/company/texnomart.svg'
+                  image: '/images/work/work-place-texnomart.svg'
                 },
                 {
-                  image: '/images/company/davrbank.png'
+                  image: '/images/work/work-place-soliq.svg'
                 },
                 {
-                  image: '/images/company/texnomart.svg'
+                  image: '/images/work/work-place-uzcard.svg'
                 },
                 {
-                  image: '/images/company/itechart.svg'
+                  image: '/images/work/work-place-mytaxi.svg'
                 },
                 {
-                  image: '/images/company/humo.png'
+                  image: '/images/work/work-place-faktor.svg'
                 },
                 {
-                  image: '/images/company/Agrobank.svg'
+                  image: '/images/work/work-place-jatfon.svg'
                 },
                 {
-                  image: '/images/company/davrbank.png'
+                  image: '/images/work/work-place-fido-studio.svg'
                 },
                 {
-                  image: '/images/company/texnomart.svg'
+                  image: '/images/work/work-place-osmondagi-bolalar.svg'
                 },
                 {
-                  image: '/images/company/epam_logo_light.svg'
+                  image: '/images/work/work-place-islom-uz.svg'
                 },
                 {
-                  image: '/images/company/itechart.svg'
+                  image: '/images/work/work-place-cambridge.svg'
                 },
                 {
-                  image: '/images/company/humo.png'
+                  image: '/images/work/work-place-kun-uz.svg'
                 },
                 {
-                  image: '/images/company/Agrobank.svg'
+                  image: '/images/work/work-place-yoshlar-agentligi.svg'
                 },
                 {
-                  image: '/images/company/texnomart.svg'
+                  image: '/images/work/work-place-pcg.svg'
                 },
 
               ].map((el, key) => (
@@ -359,7 +359,15 @@ export default function Home() {
         </div>
       </section>
       <section>
-              
+        <div className="container max-w-1100 py-16">
+          <div>
+            <h1 className="text-primary text-3xl font-bold pb-3">Bitiruvchilarimizdan izohlar</h1>
+            <p className="text-gray font-bold text-[14px]">Oʻquv kurslarimiz, ustozlar, qoʻlga kiritilgan bilim va koʻnikmalar, olingan natijalar haqida bitiruvchilarimizdan eshiting hamda ulardan kerakli tavsiyalar oling.</p>
+          </div>
+          <div className="grid grid-cols-4 gap-10">
+                
+          </div>
+        </div>
       </section>
     </main>
   )
