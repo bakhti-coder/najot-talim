@@ -12,15 +12,15 @@ import PhoneInput from 'react-phone-number-input'
 
 export default function Home() {
 
-  const texts = ["Najot'tailimda", "mutaxassislaridan ", "onlayn", "istalgannuqtadan"];
-  
+  const texts = useMemo(() => ['Najot', 'tailimda', 'mutaxassislaridan', 'onlayn', 'istalgannuqtadan'], []);
+
 
   const [currentIndex, setCurrentIndex] = useState(0);
   const [open, setOpen] = useState(false)
   const [value, setValue] = useState()
 
-  const memoizedTexts = useMemo(() => texts, [texts]);
-
+  const memoizedTexts = useMemo(() => texts, ["Najot'tailimda", "mutaxassislaridan ", "onlayn", "istalgannuqtadan"]);
+  
   useEffect(() => {
     if (texts.length > 0) {
       const timer = setTimeout(() => {
@@ -29,7 +29,7 @@ export default function Home() {
 
       return () => clearTimeout(timer);
     }
-  }, [memoizedTexts]);
+  }, [texts.length]);
 
   const handleClick = () => {
     setOpen(!open);
@@ -466,7 +466,7 @@ export default function Home() {
                     </div>
                     <p className="text-black font-semibold text-sm mt-6">{`"So‘rov yuborish" tugmasini bosish orqali`} <br />
                       <Link className="text-orange hover:underline" href={'/'}>{`Platformadan foydalanish qoidalari `}</Link>  ga rozilik bildirasiz.
-                  </p>
+                    </p>
                     <button type="submit" className="text-white font-semibold text-center bg-orange py-2.5 w-full rounded-full mt-5 hover:bg-white hover:text-black border border-orange hover:border-orange transition">{`So'rov yuborish`}</button>
                   </form>
 
